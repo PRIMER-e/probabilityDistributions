@@ -1,10 +1,10 @@
 Package: probabilityDistributions
-Title: What the Package Does (One Line, Title Case)
+Title: Useful probability distributions. 
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Andrew", "Punnett", , "andrew@primer-e.co.nz", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Useful probability distributions with matching Stan code. 
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
