@@ -12,5 +12,7 @@ A text string containing Stan code.
 \description{
 Stan has a built-in function which calculates the log probability density
 of the the Poisson distribution:
-\code{  real poisson_lpmf(ints n | reals lambda)}
+\preformatted{
+real poisson_lpmf(ints n | reals lambda)
+}
 }
