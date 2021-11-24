@@ -13,7 +13,8 @@ URL: https://primer-e.github.io/probabilityDistributions, https://github.com/PRI
 Suggests: 
     testthat (>= 3.0.0),
     rstan,
-    covr
+    covr,
+    rmarkdown
 Config/testthat/edition: 3
 Imports: 
     stats,
