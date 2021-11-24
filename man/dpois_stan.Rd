@@ -10,8 +10,7 @@ dpois_stan()
 A text string containing Stan code.
 }
 \description{
-Stan already has built-in support for the Poisson distribution via the
-poisson_lpmf function.
-Therefore, this function just returns some comments directing people
-to that.
+Stan has a built-in function which calculates the log probability density
+of the the Poisson distribution:
+\code{  real poisson_lpmf(ints n | reals lambda)}
 }
