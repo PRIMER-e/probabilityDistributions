@@ -2,7 +2,7 @@
 % Please edit documentation in R/negativeBinomial.R
 \name{dnbinom_stan}
 \alias{dnbinom_stan}
-\title{Stan code for the Negative Binomial Log Probability Density}
+\title{Negative Binomial Log Probability Mass Stan Code}
 \usage{
 dnbinom_stan()
 }

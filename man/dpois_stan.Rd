@@ -2,7 +2,7 @@
 % Please edit documentation in R/poisson.R
 \name{dpois_stan}
 \alias{dpois_stan}
-\title{Stan code for the Poisson Log Probability Density}
+\title{Poisson Log Probability Mass Stan Code}
 \usage{
 dpois_stan()
 }
