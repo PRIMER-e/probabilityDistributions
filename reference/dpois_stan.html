@@ -40,10 +40,11 @@
 
 
 <meta property="og:title" content="Stan code for the Poisson Log Probability Density — dpois_stan" />
-<meta property="og:description" content="Stan already has built-in support for the Poisson distribution via the
-poisson_lpmf function.
-Therefore, this function just returns some comments directing people
-to that." />
+<meta property="og:description" content="Stan has a built-in function which calculates the log probability density
+of the the Poisson distribution:
+real poisson_lpmf(ints n | reals lambda)
+
+" />
 
 
 
@@ -112,10 +113,11 @@ to that." />
     </div>
 
     <div class="ref-description">
-    <p>Stan already has built-in support for the Poisson distribution via the
-poisson_lpmf function.
-Therefore, this function just returns some comments directing people
-to that.</p>
+    <p>Stan has a built-in function which calculates the log probability density
+of the the Poisson distribution:</p><pre>
+real poisson_lpmf(ints n | reals lambda)
+</pre>
+
     </div>
 
     <pre class="usage"><span class='fu'>dpois_stan</span><span class='op'>(</span><span class='op'>)</span></pre>
