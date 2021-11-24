@@ -26,7 +26,7 @@ devtools::install_github("PRIMER-e/probabilityDistributions")
 ## Example
 
 This is a basic example which shows you how to calculate a Zero-Inflated
-Poisson (ZIP) probability mass usin both R and Stan:
+Poisson (ZIP) probability mass using both R and Stan:
 
 ``` r
 library(probabilityDistributions)
