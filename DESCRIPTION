@@ -8,7 +8,7 @@ Description: Useful probability distributions with matching Stan code.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.0
+RoxygenNote: 7.1.2
 URL: https://primer-e.github.io/probabilityDistributions
 Suggests: 
     testthat (>= 3.0.0)
