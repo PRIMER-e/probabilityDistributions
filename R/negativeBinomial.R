@@ -1,4 +1,4 @@
-#' Stan code for the Negative Binomial Log Probability Density
+#' Negative Binomial Log Probability Mass Stan Code
 #'
 #' Stan has built-in functions for calculating the log probability density
 #' of the negative binomial distribution:

@@ -1,5 +1,5 @@
 
-#' Stan code for the Poisson Log Probability Density
+#' Poisson Log Probability Mass Stan Code
 #'
 #' Stan has a built-in function which calculates the log probability density
 #' of the the Poisson distribution:
