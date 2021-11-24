@@ -12,7 +12,8 @@ RoxygenNote: 7.1.2
 URL: https://primer-e.github.io/probabilityDistributions
 Suggests: 
     testthat (>= 3.0.0),
-    rstan
+    rstan,
+    covr
 Config/testthat/edition: 3
 Imports: 
     stats,
