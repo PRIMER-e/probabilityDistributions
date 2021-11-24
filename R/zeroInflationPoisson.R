@@ -11,3 +11,12 @@ dzip <- function(x, lambda, pi, log = FALSE) {
     return(probabilityMass)
   }
 }
+
+#' @export
+dzip_stan <- function() {
+"real zi_neg_binomial_2_lpmf(int y, real mu, real phi, real omega) {
+  return log(omega * (y == 0) +
+               (1 - omega) * exp(neg_binomial_2_lpmf(y | mu, phi))
+  );
+}"
+}
