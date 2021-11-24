@@ -1,5 +1,5 @@
 Package: probabilityDistributions
-Title: Useful probability distributions. 
+Title: Useful probability distributions
 Version: 0.0.0.9000
 Authors@R: 
     person("Andrew", "Punnett", , "andrew@primer-e.co.nz", role = c("aut", "cre"),
