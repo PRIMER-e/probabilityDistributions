@@ -63,7 +63,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#probabilitydistributions" class="anchor"></a>probabilityDistributions</h1></div>
 <!-- badges: start -->
-
+<!-- badges: end -->
 <p>The goal of probabilityDistributions is to provide a library of useful probability distributions for both R and Stan.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -79,7 +79,26 @@
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://primer-e.github.io/probabilityDistributions">probabilityDistributions</a></span><span class="op">)</span>
-<span class="co">## basic example code</span></code></pre></div>
+
+<span class="va">stan_model_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"functions { "</span>, <span class="fu"><a href="reference/dzip_stan.html">dzip_stan</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">" }"</span><span class="op">)</span>
+
+<span class="va">model_listing</span> <span class="op">&lt;-</span> <span class="fu">rstan</span><span class="fu">::</span><span class="fu"><a href="https://mc-stan.org/rstan/reference/stanc.html">stanc</a></span><span class="op">(</span>model_code <span class="op">=</span> <span class="va">stan_model_code</span><span class="op">)</span>
+
+<span class="fu">rstan</span><span class="fu">::</span><span class="fu"><a href="https://mc-stan.org/rstan/reference/expose_stan_functions.html">expose_stan_functions</a></span><span class="op">(</span><span class="va">model_listing</span><span class="op">)</span>
+
+<span class="fu">zi_poisson_lpmf</span><span class="op">(</span><span class="fl">5</span>, <span class="fl">7.5</span>, <span class="fl">0.2</span><span class="op">)</span>
+<span class="co">#&gt; [1] -2.43612</span>
+
+<span class="fu"><a href="reference/dzip.html">dzip</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">7.5</span>, <span class="fl">0.2</span>, log <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; [1] -2.43612</span></code></pre></div>
+</div>
+<div id="development" class="section level2">
+<h2 class="hasAnchor">
+<a href="#development" class="anchor"></a>Development</h2>
+<p>After making changes run the following commands before committing to rebuild the package documentation.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">document</span><span class="op">(</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu">build_readme</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
   </div>
@@ -99,14 +118,7 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://github.com/PRIMER-e/probabilityDistributions/actions"><img src="https://github.com/PRIMER-e/probabilityDistributions/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://app.codecov.io/gh/PRIMER-e/probabilityDistributions?branch=main"><img src="https://codecov.io/gh/PRIMER-e/probabilityDistributions/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
-</ul>
-</div>
-</div>
+  </div>
 </div>
 
 
