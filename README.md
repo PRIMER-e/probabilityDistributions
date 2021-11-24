@@ -2,6 +2,7 @@
 # probabilityDistributions
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/PRIMER-e/probabilityDistributions/workflows/R-CMD-check/badge.svg)](https://github.com/PRIMER-e/probabilityDistributions/actions)
 <!-- badges: end -->
 
 The goal of probabilityDistributions is to ...
