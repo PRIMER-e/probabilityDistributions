@@ -6,7 +6,8 @@
 [![Codecov test coverage](https://codecov.io/gh/PRIMER-e/probabilityDistributions/branch/main/graph/badge.svg)](https://app.codecov.io/gh/PRIMER-e/probabilityDistributions?branch=main)
 <!-- badges: end -->
 
-The goal of probabilityDistributions is to ...
+The goal of probabilityDistributions is to provide a library of useful
+probability distributions for both R and Stan.
 
 ## Installation
 
