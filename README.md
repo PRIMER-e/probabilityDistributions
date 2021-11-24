@@ -4,6 +4,10 @@
 # probabilityDistributions
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/PRIMER-e/probabilityDistributions/workflows/R-CMD-check/badge.svg)](https://github.com/PRIMER-e/probabilityDistributions/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/PRIMER-e/probabilityDistributions/branch/main/graph/badge.svg)](https://app.codecov.io/gh/PRIMER-e/probabilityDistributions?branch=main)
 <!-- badges: end -->
 
 The goal of probabilityDistributions is to provide a library of useful
