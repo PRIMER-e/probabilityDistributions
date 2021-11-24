@@ -2,3 +2,5 @@
 
 export(dnbinom_stan)
 export(dpois_stan)
+export(dzip)
+export(dzip_stan)
