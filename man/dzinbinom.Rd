@@ -4,16 +4,20 @@
 \alias{dzinbinom}
 \title{Zero-inflated Negative Binomial Probability Mass}
 \usage{
-dzinbinom(x, size, prob, mu, log = FALSE)
+dzinbinom(x, size, prob, mu, pi, log = FALSE)
 }
 \arguments{
 \item{x}{vector of (non-negative integer) values.}
 
-\item{log}{logical; if TRUE, probabilities, p, are given as log(p).}
+\item{size}{target for number of successful trials, or dispersion parameter (the shape parameter of the gamma mixing distribution). Must be strictly positive, need not be integer.}
 
-\item{phi}{vector of over-dispersion values.}
+\item{prob}{probability of success in each trial. 0 < prob <= 1.}
+
+\item{mu}{alternative parametrization via mean: see ‘Details’.}
 
 \item{pi}{vector of (real lying in [0, 1]) zero-inflation parameters.}
+
+\item{log}{logical; if TRUE, probabilities, p, are given as log(p).}
 }
 \value{
 The (log) probability mass at x, given lambda and pi.
