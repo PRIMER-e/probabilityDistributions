@@ -19,5 +19,10 @@ Useful links:
 \author{
 \strong{Maintainer}: Andrew Punnett \email{andrew@primer-e.co.nz} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
 
+Other contributors:
+\itemize{
+  \item PRIMER-e [copyright holder, funder]
+}
+
 }
 \keyword{internal}
