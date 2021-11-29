@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>probabilityDistributions: Useful probability distributions — probabilityDistributions-package • probabilityDistributions</title>
+<title>Zero-inflated Negative Binomial Probability Mass — dzinbinom • probabilityDistributions</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="probabilityDistributions: Useful probability distributions — probabilityDistributions-package" />
-<meta property="og:description" content="Useful probability distributions with matching Stan code." />
+<meta property="og:title" content="Zero-inflated Negative Binomial Probability Mass — dzinbinom" />
+<meta property="og:description" content="Zero-inflated Negative Binomial Probability Mass" />
 
 
 
@@ -111,33 +111,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>probabilityDistributions: Useful probability distributions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/PRIMER-e/probabilityDistributions/blob/master/R/probabilityDistributions-package.R'><code>R/probabilityDistributions-package.R</code></a></small>
-    <div class="hidden name"><code>probabilityDistributions-package.Rd</code></div>
+    <h1>Zero-inflated Negative Binomial Probability Mass</h1>
+    <small class="dont-index">Source: <a href='https://github.com/PRIMER-e/probabilityDistributions/blob/master/R/zeroInflatedNegativeBinomial.R'><code>R/zeroInflatedNegativeBinomial.R</code></a></small>
+    <div class="hidden name"><code>dzinbinom.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Useful probability distributions with matching Stan code.</p>
+    <p>Zero-inflated Negative Binomial Probability Mass</p>
     </div>
 
+    <pre class="usage"><span class='fu'>dzinbinom</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>size</span>, <span class='va'>prob</span>, <span class='va'>mu</span>, log <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>vector of (non-negative integer) values.</p></td>
+    </tr>
+    <tr>
+      <th>log</th>
+      <td><p>logical; if TRUE, probabilities, p, are given as log(p).</p></td>
+    </tr>
+    <tr>
+      <th>phi</th>
+      <td><p>vector of over-dispersion values.</p></td>
+    </tr>
+    <tr>
+      <th>pi</th>
+      <td><p>vector of (real lying in [0, 1]) zero-inflation parameters.</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <div class='dont-index'><p>Useful links:</p><ul>
-<li><p><a href='https://primer-e.github.io/probabilityDistributions'>https://primer-e.github.io/probabilityDistributions</a></p></li>
-<li><p><a href='https://github.com/PRIMER-e/probabilityDistributions'>https://github.com/PRIMER-e/probabilityDistributions</a></p></li>
-</ul>
-
-</div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p><strong>Maintainer</strong>: Andrew Punnett <a href='mailto:andrew@primer-e.co.nz'>andrew@primer-e.co.nz</a> (<a href='https://orcid.org/YOUR-ORCID-ID'>ORCID</a>)</p>
-<p>Other contributors:</p><ul>
-<li><p>PRIMER-e [copyright holder, funder]</p></li>
-</ul>
-
-
+    <p>The (log) probability mass at x, given lambda and pi.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
