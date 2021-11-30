@@ -6,12 +6,14 @@
 #' \preformatted{
 #' real poisson_lpmf(ints n | reals lambda)
 #' }
+poisson_lpmf_stan <- list(source_code = "")
+
+
+#' Poisson Probability Mass Function
 #'
-#' @return A text string containing Stan code.
-#' @export
-dpois_stan <- function() {
-  "// Stan has a built-in function which calculates the log probability density
-// of  the Poisson distribution:
-//   real poisson_lpmf(ints n | reals lambda)
-"
-}
+#' Description
+#' \link[stats]{dpois}
+#'
+#' Details
+#' @name dpois
+NULL

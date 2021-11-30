@@ -7,15 +7,18 @@ reference:
   - title: "Poisson"
     desc: "Poisson distribution"
   - contents:
-    - dpois_stan
-  - subtitle: "Zero-inflated Poisson"
+    - dpois
+    - poisson_lpmf_stan
+  - title: "Zero-inflated Poisson"
     desc: "Zero-inflated Poisson distribution"
   - contents:
     - dzip
+    - zi_poisson_lpmf_stan
   - title: "Negative-binomial"
     desc: "Negative-binomial distribution"
   - contents:
     - dnbinom_stan
+  - title: "Zero-inflated Negative-binomial"
+    desc: "Zero-inflated negative-binomial distribution"
+  - contents:
     - dzinbinom
-    - stan_probability_distribution
-    - available_stan_probability_distributions

@@ -32,7 +32,10 @@ Poisson (ZIP) probability mass using both R and Stan:
 ``` r
 library(probabilityDistributions)
 
-stan_model_code <- paste0("functions { ", stan_probability_distribution("zi_poisson_lpmf"), " }")
+stan_model_code <- paste0("functions { ", 
+                          zi_poisson_lpmf()[["source_code"]], 
+                          " }",
+                          sep = "\n")
 
 model_listing <- rstan::stanc(model_code = stan_model_code)
 

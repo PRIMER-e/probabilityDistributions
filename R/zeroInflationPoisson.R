@@ -20,3 +20,13 @@ dzip <- function(x, lambda, pi, log = FALSE) {
     return(probabilityMass)
   }
 }
+
+#' Zero-inflated Poisson PMF Stan Code
+#'
+#' @return A string containing Stan source-code
+#' @export
+#'
+#' @examples
+#' cat(zi_poisson_lpmf_stan[["source_code"]])
+zi_poisson_lpmf_stan <- get_stan_function("zi_poisson_lpmf")
+

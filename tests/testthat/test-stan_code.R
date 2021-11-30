@@ -1,16 +1,15 @@
 library(probabilityDistributions)
 
+# I've put all the tests of Stan code into the same file
+# so that the tests run faster.
+# Compiling a Stan model takes about a minute,
+# so compiling each function individually in its own test would be frustrating.
+
 # TODO: Produce a warning if rstan is not installed.
 if (requireNamespace("rstan", quietly = TRUE)) {
 
-    stan_function_names <- available_stan_probability_distributions[["function_name"]]
-
-    stan_function_definitions <- vapply(stan_function_names,
-                                        function(function_name) stan_probability_distribution(function_name),
-                                        character(1))
-
     stan_model_code <- paste("functions {\n",
-                             stan_function_definitions,
+                             zi_poisson_lpmf_stan[["source_code"]],
                              "}\n",
                              sep = "\n")
 
