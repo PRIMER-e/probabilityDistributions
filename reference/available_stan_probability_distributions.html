@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Available Stan Function Definitions — available_stan_probability_distributions • probabilityDistributions</title>
+<title>Available Stan Probability Distributions — available_stan_probability_distributions • probabilityDistributions</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Available Stan Function Definitions — available_stan_probability_distributions" />
-<meta property="og:description" content="Available Stan Function Definitions" />
+<meta property="og:title" content="Available Stan Probability Distributions — available_stan_probability_distributions" />
+<meta property="og:description" content="A data.frame listing all the Stan probability distribution functions
+available within this package." />
 
 
 
@@ -111,24 +112,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Available Stan Function Definitions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/PRIMER-e/probabilityDistributions/blob/master/R/stan_probability_distribution.R'><code>R/stan_probability_distribution.R</code></a></small>
+    <h1>Available Stan Probability Distributions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/PRIMER-e/probabilityDistributions/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>available_stan_probability_distributions.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Available Stan Function Definitions</p>
+    <p>A data.frame listing all the Stan probability distribution functions
+available within this package.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>available_stan_probability_distributions</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>available_stan_probability_distributions</span></pre>
 
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A dataframe containing all available Stan function defintions.</p>
+    <p>A data frame with 1 row and 5 variables:</p><dl>
+<dt>function_name</dt><dd><p>Name of the function</p></dd>
+
+</dl>
+
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The source-code for a function can be loaded using the
+<code>stan_probability_distribution</code> function</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='r-in'><span class='fu'>available_stan_probability_distributions</span><span class='op'>(</span><span class='op'>)</span></span>
+    <pre class="examples"><span class='r-in'><span class='va'>available_stan_probability_distributions</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>             distibution function_type  log builtin   function_name</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> 1 zero-inflated Poisson           PMF TRUE   FALSE zi_poisson_lpmf</span>
 </pre>
