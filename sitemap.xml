@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://primer-e.github.io/probabilityDistributions/index.html</loc>
+    <loc>https://primer-e.github.io/probabilityDistributions/404.html</loc>
   </url>
   <url>
-    <loc>https://primer-e.github.io/probabilityDistributions/reference/available_stan_probability_distributions.html</loc>
+    <loc>https://primer-e.github.io/probabilityDistributions/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/articles/probabilityDistributions.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/index.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dnbinom_stan.html</loc>
   </url>
   <url>
-    <loc>https://primer-e.github.io/probabilityDistributions/reference/dpois_stan.html</loc>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dpois.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dzinbinom.html</loc>
@@ -19,12 +31,15 @@
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dzip.html</loc>
   </url>
   <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/poisson_lpmf_stan.html</loc>
+  </url>
+  <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/probabilityDistributions-package.html</loc>
   </url>
   <url>
-    <loc>https://primer-e.github.io/probabilityDistributions/reference/stan_probability_distribution.html</loc>
-  </url>
-  <url>
-    <loc>https://primer-e.github.io/probabilityDistributions/articles/probabilityDistributions.html</loc>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/zi_poisson_lpmf_stan.html</loc>
   </url>
 </urlset>
