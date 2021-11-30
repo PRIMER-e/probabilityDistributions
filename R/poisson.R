@@ -21,4 +21,3 @@ NULL
 #' See \link[stats]{qpois} for more details.
 #' @name qpois
 NULL
-

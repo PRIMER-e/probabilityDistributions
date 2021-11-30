@@ -1,6 +1,6 @@
 library(probabilityDistributions)
 
-test_that("dzip(x, lambda, 0) == dpois(x, lambda, 0)", {
+test_that("dzip(x, lambda, 0) == dpois(x, lambda)", {
   x = sample.int(100)
   lambda = runif(100, 0, 100)
 
@@ -47,4 +47,3 @@ test_that("dzip(x, lambda, pi, log = TRUE) == log((1 - pi) * dpois(x, lambda))  
 test_that("dzip(x, lambda, 1.5) fails", {
   expect_error(dzip(5, 7, 1.5))
 })
-
