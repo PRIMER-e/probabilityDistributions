@@ -3,7 +3,7 @@ library(probabilityDistributions)
 # TODO: Produce a warning if rstan is not installed.
 if (requireNamespace("rstan", quietly = TRUE)) {
 
-    stan_function_names <- available_stan_probability_distributions()[["function_name"]]
+    stan_function_names <- available_stan_probability_distributions[["function_name"]]
 
     stan_function_definitions <- vapply(stan_function_names,
                                         function(function_name) stan_probability_distribution(function_name),

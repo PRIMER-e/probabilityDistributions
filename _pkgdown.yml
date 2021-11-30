@@ -12,7 +12,6 @@ reference:
     desc: "Zero-inflated Poisson distribution"
   - contents:
     - dzip
-    - dzip_stan
   - title: "Negative-binomial"
     desc: "Negative-binomial distribution"
   - contents:
