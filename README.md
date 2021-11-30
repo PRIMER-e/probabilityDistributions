@@ -1,5 +1,6 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.Rmd. 
+     Please edit that file and use `devtools::build_readme()` to rebuild README.md -->
 
 # probabilityDistributions
 
@@ -31,7 +32,7 @@ Poisson (ZIP) probability mass using both R and Stan:
 ``` r
 library(probabilityDistributions)
 
-stan_model_code <- paste0("functions { ", dzip_stan(), " }")
+stan_model_code <- paste0("functions { ", stan_probability_distribution("zi_poisson_lpmf"), " }")
 
 model_listing <- rstan::stanc(model_code = stan_model_code)
 
