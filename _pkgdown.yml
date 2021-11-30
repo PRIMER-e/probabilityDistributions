@@ -17,3 +17,6 @@ reference:
     desc: "Negative-binomial distribution"
   - contents:
     - dnbinom_stan
+    - dzinbinom
+    - stan_probability_distribution
+    - available_stan_probability_distributions
