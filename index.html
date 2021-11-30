@@ -80,15 +80,24 @@
 <p>This is a basic example which shows you how to calculate a Zero-Inflated Poisson (ZIP) probability mass using both R and Stan:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://primer-e.github.io/probabilityDistributions">probabilityDistributions</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/rstan" class="external-link">rstan</a></span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: StanHeaders</span>
+<span class="co">#&gt; Loading required package: ggplot2</span>
+<span class="co">#&gt; rstan (Version 2.21.2, GitRev: 2e1f913d3ca3)</span>
+<span class="co">#&gt; For execution on a local, multicore CPU with excess RAM we recommend calling</span>
+<span class="co">#&gt; options(mc.cores = parallel::detectCores()).</span>
+<span class="co">#&gt; To avoid recompilation of unchanged Stan programs, we recommend calling</span>
+<span class="co">#&gt; rstan_options(auto_write = TRUE)</span>
+<span class="co">#&gt; Do not specify '-march=native' in 'LOCAL_CPPFLAGS' or a Makevars file</span>
 
 <span class="va">stan_model_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"functions { "</span>, 
-                          <span class="fu">zi_poisson_lpmf</span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">"source_code"</span><span class="op">]</span><span class="op">]</span>, 
+                          <span class="va">zi_poisson_lpmf_stan</span><span class="op">[[</span><span class="st">"source_code"</span><span class="op">]</span><span class="op">]</span>, 
                           <span class="st">" }"</span>,
                           sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span>
 
-<span class="va">model_listing</span> <span class="op">&lt;-</span> <span class="fu">rstan</span><span class="fu">::</span><span class="fu"><a href="https://mc-stan.org/rstan/reference/stanc.html" class="external-link">stanc</a></span><span class="op">(</span>model_code <span class="op">=</span> <span class="va">stan_model_code</span><span class="op">)</span>
+<span class="va">model_listing</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/rstan/reference/stanc.html" class="external-link">stanc</a></span><span class="op">(</span>model_code <span class="op">=</span> <span class="va">stan_model_code</span><span class="op">)</span>
 
-<span class="va">stan_function_names</span> <span class="op">&lt;-</span> <span class="fu">rstan</span><span class="fu">::</span><span class="fu"><a href="https://mc-stan.org/rstan/reference/expose_stan_functions.html" class="external-link">expose_stan_functions</a></span><span class="op">(</span><span class="va">model_listing</span><span class="op">)</span>
+<span class="va">stan_function_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/rstan/reference/expose_stan_functions.html" class="external-link">expose_stan_functions</a></span><span class="op">(</span><span class="va">model_listing</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">stan_function_names</span><span class="op">)</span>
 <span class="co">#&gt; [1] "zi_poisson_lpmf"</span>
