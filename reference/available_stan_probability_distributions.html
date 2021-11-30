@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • probabilityDistributions</title>
+<title>Available Stan Function Definitions — available_stan_probability_distributions • probabilityDistributions</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Available Stan Function Definitions — available_stan_probability_distributions" />
+<meta property="og:description" content="Available Stan Function Definitions" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -108,104 +109,30 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Available Stan Function Definitions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/PRIMER-e/probabilityDistributions/blob/master/R/stan_probability_distribution.R'><code>R/stan_probability_distribution.R</code></a></small>
+    <div class="hidden name"><code>available_stan_probability_distributions.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Available Stan Function Definitions</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>available_stan_probability_distributions</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-poisson" class="hasAnchor"><a href="#section-poisson" class="anchor"></a>Poisson</h2>
-          <p class="section-desc"><p>Poisson distribution</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="dpois_stan.html">dpois_stan()</a></code> </p>
-        </td>
-        <td><p>Poisson Log Probability Mass Stan Code</p></td>
-      </tr>
-    </tbody><tbody>
-      
-      <tr>
-        <th colspan="2">
-          <h3 id="section-zero-inflated-poisson" class="hasAnchor"><a href="#section-zero-inflated-poisson" class="anchor"></a>Zero-inflated Poisson</h3>
-          <p class="section-desc"><p>Zero-inflated Poisson distribution</p></p>
-        </th>
-      </tr>
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="dzip.html">dzip()</a></code> </p>
-        </td>
-        <td><p>Zero-inflated Poisson Probability Mass</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="dzip_stan.html">dzip_stan()</a></code> </p>
-        </td>
-        <td><p>Zero-inflated Poisson Log Probability Mass Stan Code</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-negative-binomial" class="hasAnchor"><a href="#section-negative-binomial" class="anchor"></a>Negative-binomial</h2>
-          <p class="section-desc"><p>Negative-binomial distribution</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="dnbinom_stan.html">dnbinom_stan()</a></code> </p>
-        </td>
-        <td><p>Negative Binomial Log Probability Mass Stan Code</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="dzinbinom.html">dzinbinom()</a></code> </p>
-        </td>
-        <td><p>Zero-inflated Negative Binomial Probability Mass</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="stan_probability_distribution.html">stan_probability_distribution()</a></code> </p>
-        </td>
-        <td><p>Find a Stan Function Definition</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="available_stan_probability_distributions.html">available_stan_probability_distributions()</a></code> </p>
-        </td>
-        <td><p>Available Stan Function Definitions</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A dataframe containing all available Stan function defintions.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='r-in'><span class='fu'>available_stan_probability_distributions</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             distibution function_type   function_name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 zero-inflated Poisson           PMF zi_poisson_lpmf</span>
+</pre>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
