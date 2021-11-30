@@ -8,6 +8,7 @@ reference:
     desc: "Poisson distribution"
   - contents:
     - dpois
+    - qpois
     - poisson_lpmf_stan
   - title: "Zero-inflated Poisson"
     desc: "Zero-inflated Poisson distribution"

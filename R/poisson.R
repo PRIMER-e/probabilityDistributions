@@ -1,19 +1,24 @@
-
 #' Poisson Log Probability Mass Stan Code
 #'
-#' Stan has a built-in function which calculates the log probability density
-#' of the the Poisson distribution:
-#' \preformatted{
-#' real poisson_lpmf(ints n | reals lambda)
-#' }
-poisson_lpmf_stan <- list(source_code = "")
+#' The `poisson_lpmf` function is built into Stan.
+#' See \url{https://mc-stan.org/docs/2_28/functions-reference/poisson.html} for
+#' more details.
+poisson_lpmf_stan <- list(source_code =
+"// The `poisson_lpmf` function is built into Stan.
+// See <https://mc-stan.org/docs/2_28/functions-reference/poisson.html>.")
 
 
 #' Poisson Probability Mass Function
 #'
-#' Description
-#' \link[stats]{dpois}
-#'
-#' Details
+#' This is available in the `stats` package.
+#' See \link[stats]{dpois} for more details
 #' @name dpois
 NULL
+
+#' Poisson Quantile Function
+#'
+#' This is available in the `stats` package.
+#' See \link[stats]{qpois} for more details.
+#' @name qpois
+NULL
+

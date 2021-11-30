@@ -31,15 +31,24 @@ Poisson (ZIP) probability mass using both R and Stan:
 
 ``` r
 library(probabilityDistributions)
+library(rstan)
+#> Loading required package: StanHeaders
+#> Loading required package: ggplot2
+#> rstan (Version 2.21.2, GitRev: 2e1f913d3ca3)
+#> For execution on a local, multicore CPU with excess RAM we recommend calling
+#> options(mc.cores = parallel::detectCores()).
+#> To avoid recompilation of unchanged Stan programs, we recommend calling
+#> rstan_options(auto_write = TRUE)
+#> Do not specify '-march=native' in 'LOCAL_CPPFLAGS' or a Makevars file
 
 stan_model_code <- paste0("functions { ", 
-                          zi_poisson_lpmf()[["source_code"]], 
+                          zi_poisson_lpmf_stan[["source_code"]], 
                           " }",
                           sep = "\n")
 
-model_listing <- rstan::stanc(model_code = stan_model_code)
+model_listing <- stanc(model_code = stan_model_code)
 
-stan_function_names <- rstan::expose_stan_functions(model_listing)
+stan_function_names <- expose_stan_functions(model_listing)
 
 print(stan_function_names)
 #> [1] "zi_poisson_lpmf"

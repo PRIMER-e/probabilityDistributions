@@ -11,10 +11,8 @@ An object of class \code{list} of length 1.
 poisson_lpmf_stan
 }
 \description{
-Stan has a built-in function which calculates the log probability density
-of the the Poisson distribution:
-\preformatted{
-real poisson_lpmf(ints n | reals lambda)
-}
+The \code{poisson_lpmf} function is built into Stan.
+See \url{https://mc-stan.org/docs/2_28/functions-reference/poisson.html} for
+more details.
 }
 \keyword{datasets}
