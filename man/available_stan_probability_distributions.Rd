@@ -8,6 +8,11 @@
 A data frame with 1 row and 5 variables:
 \describe{
 \item{function_name}{Name of the function}
+\item{builtin}{Whether the function is built-in to Stan}
+\item{distibution}{Which distribution the function relates to}
+\item{function_name}{Name of the function}
+\item{function_type}{Type of function, e.g. PDF or Quantile}
+\item{log}{Whether the function returns log values}
 }
 }
 \usage{
