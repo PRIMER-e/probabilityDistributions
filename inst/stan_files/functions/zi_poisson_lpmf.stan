@@ -1,31 +1,17 @@
-//
-// This Stan program defines a simple model, with a
-// vector of values 'y' modeled as normally distributed
-// with mean 'mu' and standard deviation 'sigma'.
-//
-// Learn more about model development with Stan at:
-//
-//    http://mc-stan.org/users/interfaces/rstan.html
-//    https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
-//
+// The log probability mass at x, given lambda and pi.
+// lambda is the (non-negative) mean of the poisson distribution.
+// pi is the amount of zero-inflation, which should lie within the range [0, 1].
+real zi_poisson_lpmf(int[] n, vector lambda, vector pi) {
 
-// The input data is a vector 'y' of length 'N'.
-data {
-  int<lower=0> N;
-  vector[N] y;
+  real probability_mass = 0;
+
+  for (i in 1:size(n)) {
+    if (pi[i] < 0 || pi[i] > 1) {
+      reject("pi should be in [0, 1]; pi=", pi[i]);
+    }
+
+    probability_mass += log(pi[i] * (n[i] == 0) + (1 - pi[i]) * exp(poisson_lpmf(n[i] | lambda[i])));
+  }
+
+  return probability_mass;
 }
-
-// The parameters accepted by the model. Our model
-// accepts two parameters 'mu' and 'sigma'.
-parameters {
-  real mu;
-  real<lower=0> sigma;
-}
-
-// The model to be estimated. We model the output
-// 'y' to be normally distributed with mean 'mu'
-// and standard deviation 'sigma'.
-model {
-  y ~ normal(mu, sigma);
-}
-
