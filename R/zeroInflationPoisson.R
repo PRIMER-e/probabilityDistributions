@@ -1,4 +1,4 @@
-#' Zero-inflated Poisson Probability Mass
+#' Zero-inflated Poisson Probability Mass Function
 #'
 #' @param x vector of (non-negative integer) values.
 #' @param lambda vector of (non-negative) means.
@@ -21,33 +21,49 @@ dzip <- function(x, lambda, pi, log = FALSE) {
   }
 }
 
-#' Poisson Quantile Function
+#' Zero-inflated Poisson Quantile Function
 #'
 #' @param p vector of quantiles.
 #' @param lambda vector of (non-negative) means.
-#' @param pi vector of (in [0, 1]) zero-inflation parameters.
-#' @param lower.tail logical; if TRUE (default), probabilities are P[X <= x], otherwise, P[X > x].
-#' @param log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param pi vector of (in \eqn{[0, 1]}) zero-inflation parameters.
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P[X <= x]}, otherwise, \eqn{P[X > x]}.
+#' @param log.p logical; if TRUE, probabilities p. This doesn't affect pi.
 #'
-#' @return The values which coincides with each quantile p.
+#' @return A vector of quantiles, each of which coincide with the respective probability in p.
 #' @export
 qzip <- function(p, lambda, pi, lower.tail = TRUE, log.p = FALSE) {
-  if (any(pi < 0 | pi > 1)) {
-    stop(glue::glue("argument pi contains values that lie outside the  interval [0, 1]"))
+  # TODO: Should log.p also affect pi?
+
+  if (length(lower.tail) != 1) {
+    stop("lower.tail should be length 1.")
   }
 
-  p <- ifelse(log.p,
+  if (length(log.p) != 1) {
+    stop("log.p should be length 1.")
+  }
+
+  if (any(pi < 0 | pi > 1)) {
+    stop("argument pi contains values that lie outside the  interval [0, 1]")
+  }
+
+  p_linear <- ifelse(rep(log.p, length(p)),
               exp(p),
               p)
 
-  q <- ifelse(p <= pi,
-              0,
-              qpois(p - pi, lambda, lower.tail = TRUE, log.p = FALSE))
+  if (any(p_linear < 0 | p_linear > 1)) {
+    stop("argument p contains values that represent probabilities outside the interval [0, 1]")
+  }
 
-  ifelse(lower.tail, q, 1 - q)
+  p_lower <- ifelse(rep(lower.tail, length(p)),
+              p_linear,
+              1 - p_linear)
+
+  q <- ifelse(p_lower < pi, 0, stats::qpois(p_lower - pi, lambda, lower.tail = TRUE, log.p = FALSE))
+
+  q
 }
 
-#' Zero-inflated Poisson PMF Stan Code
+#' Zero-inflated Poisson Log Probability Mass Function Stan Code
 #'
 #' @return A string containing Stan source-code
 #' @export

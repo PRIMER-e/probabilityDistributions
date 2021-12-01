@@ -2,7 +2,7 @@
 % Please edit documentation in R/zeroInflationPoisson.R
 \name{dzip}
 \alias{dzip}
-\title{Zero-inflated Poisson Probability Mass}
+\title{Zero-inflated Poisson Probability Mass Function}
 \usage{
 dzip(x, lambda, pi, log = FALSE)
 }
@@ -19,5 +19,5 @@ dzip(x, lambda, pi, log = FALSE)
 The (log) probability mass at x, given lambda and pi.
 }
 \description{
-Zero-inflated Poisson Probability Mass
+Zero-inflated Poisson Probability Mass Function
 }

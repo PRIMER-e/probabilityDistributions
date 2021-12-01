@@ -3,7 +3,7 @@
 \docType{data}
 \name{zi_poisson_lpmf_stan}
 \alias{zi_poisson_lpmf_stan}
-\title{Zero-inflated Poisson PMF Stan Code}
+\title{Zero-inflated Poisson Log Probability Mass Function Stan Code}
 \format{
 An object of class \code{list} of length 1.
 }
@@ -14,7 +14,7 @@ zi_poisson_lpmf_stan
 A string containing Stan source-code
 }
 \description{
-Zero-inflated Poisson PMF Stan Code
+Zero-inflated Poisson Log Probability Mass Function Stan Code
 }
 \examples{
 cat(zi_poisson_lpmf_stan[["source_code"]])

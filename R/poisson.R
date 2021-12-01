@@ -1,4 +1,4 @@
-#' Poisson Log Probability Mass Stan Code
+#' Poisson Log Probability Mass Function Stan Code
 #'
 #' The `poisson_lpmf` function is built into Stan.
 #' See \url{https://mc-stan.org/docs/2_28/functions-reference/poisson.html} for

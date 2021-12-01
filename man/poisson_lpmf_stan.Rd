@@ -3,7 +3,7 @@
 \docType{data}
 \name{poisson_lpmf_stan}
 \alias{poisson_lpmf_stan}
-\title{Poisson Log Probability Mass Stan Code}
+\title{Poisson Log Probability Mass Function Stan Code}
 \format{
 An object of class \code{list} of length 1.
 }

@@ -3,4 +3,5 @@
 export(dnbinom_stan)
 export(dzinbinom)
 export(dzip)
+export(qzip)
 export(zi_poisson_lpmf_stan)
