@@ -3,6 +3,8 @@
 #' The `poisson_lpmf` function is built into Stan.
 #' See \url{https://mc-stan.org/docs/2_28/functions-reference/poisson.html} for
 #' more details.
+#' @usage NULL
+#' @format NULL
 poisson_lpmf_stan <- list(source_code =
 "// The `poisson_lpmf` function is built into Stan.
 // See <https://mc-stan.org/docs/2_28/functions-reference/poisson.html>.")
