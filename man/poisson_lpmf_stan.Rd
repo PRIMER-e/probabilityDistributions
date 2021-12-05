@@ -4,12 +4,6 @@
 \name{poisson_lpmf_stan}
 \alias{poisson_lpmf_stan}
 \title{Poisson Log Probability Mass Function Stan Code}
-\format{
-An object of class \code{list} of length 1.
-}
-\usage{
-poisson_lpmf_stan
-}
 \description{
 The \code{poisson_lpmf} function is built into Stan.
 See \url{https://mc-stan.org/docs/2_28/functions-reference/poisson.html} for
