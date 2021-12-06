@@ -12,7 +12,7 @@
 #' @export
 dzinbll <- function(x, size, prob, mu, gamma0, gamma1, log = FALSE) {
 
-  pi = stats::qlogis(gamma0 + gamma1 * log(lambda))
+  pi = stats::qlogis(gamma0 + gamma1 * log(mu))
 
   dzinb(x, size, prob, mu, pi, log = log)
 }
@@ -31,7 +31,7 @@ dzinbll <- function(x, size, prob, mu, gamma0, gamma1, log = FALSE) {
 #' @return A vector of quantiles, each of which coincide with the respective probability in p.
 #' @export
 qzinbll <- function(p, size, prob, mu, gamma0, gamma1, lower.tail = TRUE, log.p = FALSE) {
-  pi = stats::qlogis(gamma0 + gamma1 * log(lambda))
+  pi = stats::qlogis(gamma0 + gamma1 * log(mu))
 
   qzinb(p, size, prob, mu, pi, lower.tail = lower.tail, log.p = log.p)
 }

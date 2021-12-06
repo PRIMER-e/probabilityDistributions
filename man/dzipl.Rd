@@ -16,8 +16,6 @@ dzipl(x, lambda, gamma0, gamma1, log = FALSE)
 \item{gamma1}{The zero-inflation to mean link gradient.}
 
 \item{log}{logical; if TRUE, probabilities, p, are given as log(p).}
-
-\item{log.link}{logical; if TRUE, then the zero-inflation is linked to the logarithm of the mean.}
 }
 \value{
 The (log) probability mass at x, given lambda and pi.

@@ -12,7 +12,7 @@
 #' @export
 dzinbl <- function(x, size, prob, mu, gamma0, gamma1, log = FALSE) {
 
-  pi = stats::qlogis(gamma0 + gamma1 * lambda)
+  pi = stats::qlogis(gamma0 + gamma1 * mu)
 
   dzinb(x, size, prob, mu, pi, log = log)
 }
@@ -31,7 +31,9 @@ dzinbl <- function(x, size, prob, mu, gamma0, gamma1, log = FALSE) {
 #' @return A vector of quantiles, each of which coincide with the respective probability in p.
 #' @export
 qzinbl <- function(p, size, prob, mu, gamma0, gamma1, lower.tail = TRUE, log.p = FALSE) {
-  pi = stats::qlogis(gamma0 + gamma1 * lambda)
+  # TODO: Change everything to the mean / over-dispersion parameterisation,
+  #       as we always need the mean for the linkage.
+  pi = stats::qlogis(gamma0 + gamma1 * mu)
 
   qzinb(p, size, prob, mu, pi, lower.tail = lower.tail, log.p = log.p)
 }

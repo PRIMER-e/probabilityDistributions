@@ -5,7 +5,6 @@
 #' @param gamma0 The zero-inflation to mean link intercept.
 #' @param gamma1 The zero-inflation to mean link gradient.
 #' @param log logical; if TRUE, probabilities, p, are given as log(p).
-#' @param log.link logical; if TRUE, then the zero-inflation is linked to the logarithm of the mean.
 #'
 #' @return The (log) probability mass at x, given lambda and pi.
 #' @export
