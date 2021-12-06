@@ -14,11 +14,39 @@ reference:
     - dzip
     - qzip
     - zi_poisson_lpmf_stan
+  - title: "Zero-inflated Poisson Linked"
+    desc: "Zero-inflated Poisson (with linked mean and zero-inflation) distribution"
+  - contents:
+    - dzipl
+    - qzipl
+    - zi_poisson_linked_lpmf_stan
+  - title: "Zero-inflated Poisson Log-linked"
+    desc: "Zero-inflated Poisson (with log-linked mean and zero-inflation) distribution"
+  - contents:
+    - dzipll
+    - qzipll
+    - zi_poisson_log_linked_lpmf_stan
   - title: "Negative-binomial"
     desc: "Negative-binomial distribution"
   - contents:
-    - dnbinom_stan
+    - dnbinom
+    - qnbinom
+    - neg_binomial_2_lpmf_stan
   - title: "Zero-inflated Negative-binomial"
     desc: "Zero-inflated negative-binomial distribution"
   - contents:
-    - dzinbinom
+    - dzinb
+    - qzinb
+    - zi_neg_binomial_2_lpmf_stan
+  - title: "Zero-inflated Negative-binomial Linked"
+    desc: "Zero-inflated negative-binomial (with linked mean and zero-inflation) distribution"
+  - contents:
+    - dzinbl
+    - qzinbl
+    - zi_neg_binomial_2_linked_lpmf_stan
+  - title: "Zero-inflated Negative-binomial Log-linked"
+    desc: "Zero-inflated negative-binomial (with log-linked mean and zero-inflation) distribution"
+  - contents:
+    - dzinbll
+    - qzinbll
+    - zi_neg_binomial_2_log_linked_lpmf_stan

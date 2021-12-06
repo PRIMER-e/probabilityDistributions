@@ -10,6 +10,7 @@ real zi_poisson_lpmf(int[] n, vector lambda, vector pi) {
       reject("pi should be in [0, 1]; pi=", pi[i]);
     }
 
+    // TODO: Would this be more efficient if it used log_sum_exp?
     probability_mass += log(pi[i] * (n[i] == 0) + (1 - pi[i]) * exp(poisson_lpmf(n[i] | lambda[i])));
   }
 
