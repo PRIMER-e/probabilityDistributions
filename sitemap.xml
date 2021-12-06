@@ -19,19 +19,34 @@
     <loc>https://primer-e.github.io/probabilityDistributions/index.html</loc>
   </url>
   <url>
-    <loc>https://primer-e.github.io/probabilityDistributions/reference/dnbinom_stan.html</loc>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dnbinom.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dpois.html</loc>
   </url>
   <url>
-    <loc>https://primer-e.github.io/probabilityDistributions/reference/dzinbinom.html</loc>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dzinb.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dzinbl.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dzinbll.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dzip.html</loc>
   </url>
   <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dzipl.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dzipll.html</loc>
+  </url>
+  <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/neg_binomial_2_lpmf_stan.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/poisson_lpmf_stan.html</loc>
@@ -40,10 +55,43 @@
     <loc>https://primer-e.github.io/probabilityDistributions/reference/probabilityDistributions-package.html</loc>
   </url>
   <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qnbinom.html</loc>
+  </url>
+  <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/qpois.html</loc>
   </url>
   <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qzinb.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qzinbl.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qzinbll.html</loc>
+  </url>
+  <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/qzip.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qzipl.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qzipll.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/zi_neg_binomial_2_linked_lpmf_stan.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/zi_neg_binomial_2_log_linked_lpmf_stan.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/zi_neg_binomial_2_lpmf_stan.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/zi_poisson_linked_lpmf_stan.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/zi_poisson_log_linked_lpmf_stan.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/zi_poisson_lpmf_stan.html</loc>
