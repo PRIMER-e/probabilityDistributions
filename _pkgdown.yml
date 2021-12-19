@@ -35,18 +35,18 @@ reference:
   - title: "Zero-inflated Negative-binomial"
     desc: "Zero-inflated negative-binomial distribution"
   - contents:
-    - dzinb
-    - qzinb
+    - dzinb_2
+    - qzinb_2
     - zi_neg_binomial_2_lpmf_stan
   - title: "Zero-inflated Negative-binomial Linked"
     desc: "Zero-inflated negative-binomial (with linked mean and zero-inflation) distribution"
   - contents:
-    - dzinbl
-    - qzinbl
+    - dzinbl_2
+    - qzinbl_2
     - zi_neg_binomial_2_linked_lpmf_stan
   - title: "Zero-inflated Negative-binomial Log-linked"
     desc: "Zero-inflated negative-binomial (with log-linked mean and zero-inflation) distribution"
   - contents:
-    - dzinbll
-    - qzinbll
+    - dzinbll_2
+    - qzinbll_2
     - zi_neg_binomial_2_log_linked_lpmf_stan
