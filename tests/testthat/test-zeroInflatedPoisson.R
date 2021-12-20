@@ -1,5 +1,3 @@
-library(probabilityDistributions)
-
 test_that("dzip(x, lambda, 0) == dpois(x, lambda)", {
   x = sample.int(100)
   lambda = runif(100, 0, 100)

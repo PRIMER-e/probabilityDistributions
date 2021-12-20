@@ -11,7 +11,7 @@
 #' @export
 dzinbl_2 <- function(x, mu, phi, gamma0, gamma1, log = FALSE) {
 
-  pi = stats::qlogis(gamma0 + gamma1 * mu)
+  pi = stats::plogis(gamma0 + gamma1 * mu)
 
   dzinb_2(x, mu, phi, pi, log = log)
 }
@@ -29,16 +29,20 @@ dzinbl_2 <- function(x, mu, phi, gamma0, gamma1, log = FALSE) {
 #' @return A vector of quantiles, each of which coincide with the respective probability in p.
 #' @export
 qzinbl_2 <- function(p, mu, phi, gamma0, gamma1, lower.tail = TRUE, log.p = FALSE) {
-  pi = stats::qlogis(gamma0 + gamma1 * mu)
+  pi = stats::plogis(gamma0 + gamma1 * mu)
 
   qzinb_2(p, mu, phi, pi, lower.tail = lower.tail, log.p = log.p)
 }
 
 #' Zero-inflated Negative-binomial Linked Log Probability Mass Function Stan Code
 #'
-#' @return A string containing Stan source-code
+#' Stan code for the zero-inflated negative-binomial distribution's log probability mass function,
+#' where the amount of zero-inflation is a function of the mean.
+#'
+#' @usage NULL
+#' @format NULL
 #' @export
 #'
 #' @examples
-#' cat(zi_neg_binomial_2_linked_lpmf_stan[["source_code"]])
-zi_neg_binomial_2_linked_lpmf_stan <- get_stan_function("zi_neg_binomial_2_linked_lpmf")
+#' cat(zi_neg_binomial_linked_2_lpmf_stan[["source_code"]])
+zi_neg_binomial_linked_2_lpmf_stan <- get_stan_function("zi_neg_binomial_linked_2_lpmf")

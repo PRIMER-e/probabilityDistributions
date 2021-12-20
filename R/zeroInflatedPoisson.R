@@ -9,7 +9,7 @@
 #' @export
 dzip <- function(x, lambda, pi, log = FALSE) {
   if (any(pi < 0 | pi > 1)) {
-    stop(glue::glue("argument pi contains values that lie outside the  interval [0, 1]"))
+    stop(("argument pi contains values that lie outside the  interval [0, 1]"))
   }
 
   probabilityMass = pi * (x == 0) + (1 - pi) * stats::dpois(x, lambda)
@@ -65,9 +65,11 @@ qzip <- function(p, lambda, pi, lower.tail = TRUE, log.p = FALSE) {
 
 #' Zero-inflated Poisson Log Probability Mass Function Stan Code
 #'
-#' @return A string containing Stan source-code
-#' @export
+#' Stan code for the zero-inflated Poisson distribution's log probability mass function.
 #'
+#' @usage NULL
+#' @format NULL
+#' @export
 #' @examples
 #' cat(zi_poisson_lpmf_stan[["source_code"]])
 zi_poisson_lpmf_stan <- get_stan_function("zi_poisson_lpmf")

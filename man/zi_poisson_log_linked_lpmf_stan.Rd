@@ -4,17 +4,9 @@
 \name{zi_poisson_log_linked_lpmf_stan}
 \alias{zi_poisson_log_linked_lpmf_stan}
 \title{Zero-inflated Poisson Linked Log Probability Mass Function Stan Code}
-\format{
-An object of class \code{list} of length 1.
-}
-\usage{
-zi_poisson_log_linked_lpmf_stan
-}
-\value{
-A string containing Stan source-code
-}
 \description{
-Zero-inflated Poisson Linked Log Probability Mass Function Stan Code
+Stan code for the zero-inflated Poisson distribution's log probability mass function,
+where the amount of zero-inflation is a function of log(mean).
 }
 \examples{
 cat(zi_poisson_log_linked_lpmf_stan[["source_code"]])

@@ -5,6 +5,9 @@
 #' more details.
 #' @usage NULL
 #' @format NULL
+#' @export
+#' @examples
+#' cat(poisson_lpmf_stan[["source_code"]])
 poisson_lpmf_stan <- list(source_code =
 "// The `poisson_lpmf` function is built into Stan.
 // See <https://mc-stan.org/docs/2_28/functions-reference/poisson.html>.")

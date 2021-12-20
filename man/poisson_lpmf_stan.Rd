@@ -9,4 +9,7 @@ The \code{poisson_lpmf} function is built into Stan.
 See \url{https://mc-stan.org/docs/2_28/functions-reference/poisson.html} for
 more details.
 }
+\examples{
+cat(poisson_lpmf_stan[["source_code"]])
+}
 \keyword{datasets}

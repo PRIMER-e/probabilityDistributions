@@ -19,4 +19,7 @@ See \url{https://mc-stan.org/docs/2_19/functions-reference/negative-binomial-dis
 and \url{https://mc-stan.org/docs/2_19/functions-reference/nbalt.html} for
 more details.
 }
+\examples{
+cat(neg_binomial_2_lpmf_stan[["source_code"]])
+}
 \keyword{datasets}

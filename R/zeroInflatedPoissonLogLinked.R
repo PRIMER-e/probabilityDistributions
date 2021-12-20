@@ -9,7 +9,7 @@
 #' @return The (log) probability mass at x, given lambda and pi.
 #' @export
 dzipll <- function(x, lambda, gamma0, gamma1, log = FALSE) {
-  pi = stats::qlogis(gamma0 + gamma1 * log(lambda))
+  pi = stats::plogis(gamma0 + gamma1 * log(lambda))
 
   dzip(x, lambda, pi, log = log)
 }
@@ -26,14 +26,18 @@ dzipll <- function(x, lambda, gamma0, gamma1, log = FALSE) {
 #' @return A vector of quantiles, each of which coincide with the respective probability in p.
 #' @export
 qzipll <- function(p, lambda, gamma0, gamma1, lower.tail = TRUE, log.p = FALSE) {
-  pi = stats::qlogis(gamma0 + gamma1 * log(lambda))
+  pi = stats::plogis(gamma0 + gamma1 * log(lambda))
 
   qzip(p, lambda, pi, lower.tail = lower.tail, log.p = log.p)
 }
 
 #' Zero-inflated Poisson Linked Log Probability Mass Function Stan Code
 #'
-#' @return A string containing Stan source-code
+#' Stan code for the zero-inflated Poisson distribution's log probability mass function,
+#' where the amount of zero-inflation is a function of log(mean).
+#'
+#' @usage NULL
+#' @format NULL
 #' @export
 #'
 #' @examples

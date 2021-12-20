@@ -9,14 +9,16 @@
 #' @return The (log) probability mass at x, given mu, phi and pi.
 #' @export
 dzinb_2 <- function(x, mu, phi, pi, log = FALSE) {
+  if (length(log) != 1) {
+    stop("log should be length 1.")
+  }
+
   if(any(pi < 0 | pi > 1)) {
-    stop(glue::glue("argument pi contains values that lie outside the  interval [0, 1]"))
+    stop(("argument pi contains values that lie outside the  interval [0, 1]"))
   }
 
   probabilityMass = pi * (x == 0) +
-                    (1 - pi) * stats::dnbinom(x = x,
-                                              size = phi,
-                                              mu = mu)
+                    (1 - pi) * dneg_binomial_2(x = x, mu = mu, phi = phi)
 
   if (log) {
     return(log(probabilityMass))
@@ -61,9 +63,9 @@ qzinb_2 <- function(p, mu, phi, pi, lower.tail = TRUE, log.p = FALSE) {
               p_linear,
               1 - p_linear)
 
-  q <- ifelse(p_lower < pi, 0, stats::qnbinom(q = p_lower - pi,
-                                              size = phi,
+  q <- ifelse(p_lower < pi, 0, qneg_binomial_2(p = p_lower - pi,
                                               mu = mu,
+                                              phi = phi,
                                               lower.tail = TRUE,
                                               log.p = FALSE))
 
@@ -72,7 +74,10 @@ qzinb_2 <- function(p, mu, phi, pi, lower.tail = TRUE, log.p = FALSE) {
 
 #' Zero-inflated Negative-binomial Log Probability Mass Function Stan Code
 #'
-#' @return A string containing Stan source-code
+#' Stan code for the zero-inflated negative-binomial log probability mass function.
+#'
+#' @usage NULL
+#' @format NULL
 #' @export
 #'
 #' @examples
