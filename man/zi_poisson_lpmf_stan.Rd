@@ -5,7 +5,7 @@
 \alias{zi_poisson_lpmf_stan}
 \title{Zero-inflated Poisson Log Probability Mass Function Stan Code}
 \description{
-Stan code for the zero-inflated Poisson distribution's probability mass function.
+Stan code for the zero-inflated Poisson distribution's log probability mass function.
 }
 \examples{
 cat(zi_poisson_lpmf_stan[["source_code"]])
