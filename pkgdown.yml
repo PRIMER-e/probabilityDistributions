@@ -3,7 +3,7 @@ pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   probabilityDistributions: probabilityDistributions.html
-last_built: 2021-12-20T07:17Z
+last_built: 2021-12-22T02:35Z
 urls:
   reference: https://primer-e.github.io/probabilityDistributions/reference
   article: https://primer-e.github.io/probabilityDistributions/articles
