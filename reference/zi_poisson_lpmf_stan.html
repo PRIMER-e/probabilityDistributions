@@ -60,20 +60,14 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> // The log probability mass at x, given lambda and pi.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> // lambda is the (non-negative) mean of the poisson distribution.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> // pi is the amount of zero-inflation, which should lie within the range [0, 1].</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> real zi_poisson_lpmf(int[] n, vector lambda, vector pi) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> real zi_poisson_lpmf(int n, real lambda, real pi) {</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   real probability_mass = 0;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   for (i in 1:size(n)) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     if (pi[i] &lt; 0 || pi[i] &gt; 1) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       reject("pi should be in [0, 1]; pi=", pi[i]);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     if (pi &lt; 0 || pi &gt; 1) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       reject("pi should be in [0, 1]; pi=", pi);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     // TODO: Would this be more efficient if it used log_sum_exp?</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     probability_mass += log(pi[i] * (n[i] == 0) + (1 - pi[i]) * exp(poisson_lpmf(n[i] | lambda[i])));</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   return probability_mass;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     return log(pi * (n == 0) + (1 - pi) * exp(poisson_lpmf(n | lambda)));</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
 </code></pre></div>
     </div>
