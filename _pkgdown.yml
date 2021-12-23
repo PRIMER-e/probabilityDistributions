@@ -1,6 +1,4 @@
 url: https://primer-e.github.io/probabilityDistributions
-template:
-  bootstrap: 5
 reference:
   - title: "Poisson"
     desc: "Poisson distribution"
