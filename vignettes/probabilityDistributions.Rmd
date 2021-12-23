@@ -14,6 +14,58 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r}
+#install.packages("devtools")
+#devtools::install_github("PRIMER-e/probabilityDistributions")
+#devtools::install_github("PRIMER-e/responseFunctions")
+
 library(probabilityDistributions)
+library(responseFunctions)
+library(rstan)
+
+model_code <- paste( 
+"
+functions {
+",
+modskurt_stan[["source_code"]],
+modskurtp1_stan[["source_code"]],
+zi_neg_binomial_log_linked_2_lpmf_stan[["source_code"]],
+"
+}
+
+data {
+  int<lower=1> N;
+  real x[N];
+  int<lower=0> y[N];
+}
+
+// The parameters accepted by the model.
+parameters {
+real<lower=0> H;
+real m;
+real<lower=0> s;
+real r;
+real d;
+real<lower=0> phi;
+real gamma0;
+real gamma1;
+}
+
+// The model to be estimated.
+model {
+// Having no prior defined is equivalent to all parameters having
+// a uniform prior, which is exactly what we want for finding
+// Maximum Likelihood (ML) estimates.
+
+for (n in 1:N) {
+  real mu = modskurtp1(x[n], H, m, s, r, d);
+  target += zi_neg_binomial_log_linked_2_lpmf(y[n] | mu, phi, gamma0, gamma1);
+  }
+}
+",
+sep = "\n")
+
+model <- stan_model(model_code = model_code)
+
 ```
+
