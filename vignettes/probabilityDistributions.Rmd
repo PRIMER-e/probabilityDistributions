@@ -65,7 +65,7 @@ for (n in 1:N) {
 ",
 sep = "\n")
 
-model <- stan_model(model_code = model_code)
+model <- stanc(model_code = model_code)
 
 ```
 
