@@ -29,7 +29,7 @@ dzinbl_2 <- function(x, mu, phi, gamma0, gamma1, log = FALSE) {
 #' @return A vector of quantiles, each of which coincide with the respective probability in p.
 #' @export
 qzinbl_2 <- function(p, mu, phi, gamma0, gamma1, lower.tail = TRUE, log.p = FALSE) {
-  pi = stats::plogis(gamma0 + gamma1 * mu)
+  pi <- stats::plogis(gamma0 + gamma1 * mu)
 
   qzinb_2(p, mu, phi, pi, lower.tail = lower.tail, log.p = log.p)
 }
