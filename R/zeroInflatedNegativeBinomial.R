@@ -51,23 +51,38 @@ qzinb_2 <- function(p, mu, phi, pi, lower.tail = TRUE, log.p = FALSE) {
     stop("argument pi contains values that lie outside the  interval [0, 1]")
   }
 
-  p_linear <- ifelse(rep(log.p, length(p)),
-              exp(p),
-              p)
+  p_linear <- p
+  if (log.p) {
+    p_linear <- exp(p)
+  }
 
   if (any(p_linear < 0 | p_linear > 1)) {
     stop("argument p contains values that represent probabilities outside the interval [0, 1]")
   }
 
-  p_lower <- ifelse(rep(lower.tail, length(p)),
-              p_linear,
-              1 - p_linear)
+  p_lower <-  p_linear
+  if (! lower.tail) {
+    p_lower <- 1 - p_linear
+  }
 
-  q <- ifelse(p_lower < pi, 0, qneg_binomial_2(p = p_lower - pi,
-                                              mu = mu,
-                                              phi = phi,
+  output_length <- max(length(p), length(mu), length(pi), length(phi))
+  q <- numeric(output_length)
+  for (i in 1:output_length) {
+    p_lower_i <- p_lower[[(i - 1) %% length(p_lower) + 1]]
+    pi_i <- pi[[(i - 1) %% length(pi) + 1]]
+    mu_i <- mu[[(i - 1) %% length(mu) + 1]]
+    phi_i <- phi[[(i - 1) %% length(phi) + 1]]
+
+    if (p_lower_i <= pi_i) {
+      q[[i]] <- 0
+    } else {
+      q[[i]] <- qneg_binomial_2(p = (p_lower_i - pi_i) / (1.0 - pi_i),
+                                              mu = mu_i,
+                                              phi = phi_i,
                                               lower.tail = TRUE,
-                                              log.p = FALSE))
+                                              log.p = FALSE)
+    }
+  }
 
   q
 }
