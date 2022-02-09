@@ -96,7 +96,7 @@ test_that("qzip(0.5, 7, 0.2) is correct", {
   lambda <- 7
   pi <- 0.2
 
-  expected <- 5
+  expected <- 6
 
   expect_equal(qzip(p, lambda, pi), expected)
   expect_equal(qzip(1 - p, lambda, pi, lower.tail = FALSE), expected)
@@ -117,4 +117,12 @@ test_that("qzip(0.1, 7, 0.2) is correct", {
   expect_equal(qzip(log(p), lambda, pi, log.p = TRUE), expected)
   expect_equal(qzip(log(1 - p), lambda, pi, lower.tail = FALSE, log.p = TRUE), expected)
 
+})
+
+test_that("qzip matches VGAM::qzipois", {
+  p <- c(runif(200, 0, 1), 0, 1)
+  lambda <- runif(300, 0, 20)
+  pi <- c(runif(500, 0, 1), 0, 1)
+
+  expect_equal(qzip(p, lambda, pi), VGAM::qzipois(p, lambda, pi))
 })
