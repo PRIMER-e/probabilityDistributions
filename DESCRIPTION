@@ -18,7 +18,8 @@ Suggests:
     covr,
     rmarkdown,
     knitr,
-    responseFunctions
+    responseFunctions,
+    VGAM 
 Config/testthat/edition: 3
 Imports: 
     stats,
