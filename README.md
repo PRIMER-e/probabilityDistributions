@@ -33,12 +33,15 @@ Poisson (ZIP) probability mass using both R and Stan:
 library(probabilityDistributions)
 library(rstan)
 #> Loading required package: StanHeaders
-#> Loading required package: ggplot2
-#> rstan (Version 2.21.2, GitRev: 2e1f913d3ca3)
+#> 
+#> rstan version 2.26.13 (Stan version 2.26.1)
 #> For execution on a local, multicore CPU with excess RAM we recommend calling
 #> options(mc.cores = parallel::detectCores()).
 #> To avoid recompilation of unchanged Stan programs, we recommend calling
 #> rstan_options(auto_write = TRUE)
+#> For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+#> change `threads_per_chain` option:
+#> rstan_options(threads_per_chain = 1)
 #> Do not specify '-march=native' in 'LOCAL_CPPFLAGS' or a Makevars file
 
 stan_model_code <- paste0("functions { ", 
