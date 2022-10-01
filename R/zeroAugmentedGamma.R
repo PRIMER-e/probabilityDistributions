@@ -120,12 +120,13 @@ qzag <- function(p, mu, phi, pi, lower.tail = TRUE, log.p = FALSE) {
     p_lower_i <- p_lower[[(i - 1) %% length(p_lower) + 1]]
     pi_i <- pi[[(i - 1) %% length(pi) + 1]]
     rate_i <- sr$rate[[(i - 1) %% length(sr$rate) + 1]]
+    shape_i <- sr$shape[[(i - 1) %% length(sr$shape) + 1]]
 
     if (p_lower_i <= pi_i) {
       q[[i]] <- 0
     } else {
       q[[i]] <- stats::qgamma(p = (p_lower_i - pi_i) / (1.0 - pi_i),
-                              shape = sr$shape,
+                              shape = shape_i,
                               rate = rate_i,
                               lower.tail = TRUE,
                               log.p = FALSE)
