@@ -18,7 +18,7 @@ dzag(x, mu, phi, pi, log = FALSE)
 \item{log}{logical; if TRUE, probabilities, p, are given as log(p).}
 }
 \value{
-The (log) probability mass at x, given lambda and pi.
+The (log) probability mass at x, given mu, phi, and pi.
 }
 \description{
 Zero-augmented Gamma Probability Density Function
