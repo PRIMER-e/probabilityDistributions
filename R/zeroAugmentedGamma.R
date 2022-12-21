@@ -6,7 +6,7 @@
 #' @param pi vector of (real lying in \[0, 1\]) zero-inflation parameters.
 #' @param log logical; if TRUE, probabilities, p, are given as log(p).
 #'
-#' @return The (log) probability mass at x, given lambda and pi.
+#' @return The (log) probability mass at x, given mu, phi, and pi.
 #' @export
 dzag <- function(x, mu, phi, pi, log = FALSE) {
   if (any(mu <= 0) | any(phi <= 0)) {
@@ -18,26 +18,15 @@ dzag <- function(x, mu, phi, pi, log = FALSE) {
   if (any(!is.finite(phi))) {
     stop('argument phi contains undefined values')
   }
-  if (length(mu) > 1 & length(pi) > 1 & length(mu) != length(pi)) {
-    stop("vector recycling is discouraged, please use either the same length",
-         " mu & pi, or a single value for one and a vector for the other",
-         " (iteratively if a combination is required)")
-  }
-
+  # check lengths and pad if neeed for vectors later
+  output_length <- check_lengths(x, mu, phi, pi)
   sr <- gamma_mu_to_rate(mu, phi)
-  output_length <- max(length(x), length(mu), length(pi))
-  if (length(x) == 1) {
-    x <- rep_len(x, output_length)
-  }
-  if (length(pi) == 1) {
-    pi <- rep_len(pi, output_length)
-  }
-  if (length(sr$shape) == 1) {
-    sr$shape <- rep_len(sr$shape, output_length)
-  }
-  if (length(sr$rate) == 1) {
-    sr$rate <- rep_len(sr$rate, output_length)
-  }
+  shape <- sr$shape
+  rate <- sr$rate
+  x <- pad_arg(x, output_length)
+  shape <- pad_arg(shape, output_length)
+  rate <- pad_arg(rate, output_length)
+  pi <- pad_arg(pi, output_length)
 
   # note dgamma sometimes defined at x = 0, can that be mixed in this dist?
   # shape > 1 => 0
@@ -49,14 +38,14 @@ dzag <- function(x, mu, phi, pi, log = FALSE) {
     # so use dgamma log instead
     p_dens[x == 0] <- log(pi[x == 0])
     p_dens[x > 0] <- log((1 - pi[x > 0])) + stats::dgamma(x[x > 0],
-                                                          sr$shape[x > 0],
-                                                          sr$rate[x > 0],
+                                                          shape[x > 0],
+                                                          rate[x > 0],
                                                           log = TRUE)
   } else {
     p_dens[x == 0] <- pi[x == 0]
     p_dens[x > 0] <- (1 - pi[x > 0]) * stats::dgamma(x[x > 0],
-                                                     sr$shape[x > 0],
-                                                     sr$rate[x > 0])
+                                                     shape[x > 0],
+                                                     rate[x > 0])
   }
   p_dens
 }

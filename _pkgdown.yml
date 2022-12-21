@@ -55,3 +55,15 @@ reference:
     - gamma_rate_to_mu
     - dzag
     - qzag
+  - title: "Tail-adjusted Beta"
+    desc: "Tail-adjusted beta distribution with mean-dispersion parameterisation"
+  - contents:
+    - beta_mu_to_shape
+    - beta_shape_to_mu
+    - dtab
+    - qtab
+  - title: "Zero-inflated Tail-adjusted Beta"
+    desc: "Zero-inflated tail-adjusted beta distribution"
+  - contents:
+    - dzitab
+    - qzitab

@@ -54,6 +54,7 @@ test_that("dzag == 0 when pi = 1 & x > 0", {
   expect_equal(dens[x == 0], rep(log(1), sum(x == 0)))
   expect_equal(dens[x > 0], rep(log(0), sum(x > 0)))
 })
+
 test_that("dzag == (1 - pi) * dgamma when x > 0", {
   x <- seq(0.00001, 30, length.out = 1000)
   x <- seq(1, 100, length.out = 1000)
@@ -63,7 +64,7 @@ test_that("dzag == (1 - pi) * dgamma when x > 0", {
   pi <- runif(1000, 0, 1)
   expect_equal(dzag(x, mu, phi, pi), (1 - pi) * dgamma(x, sr$shape, sr$rate))
   expect_equal(dzag(x, mu, phi, pi, log = TRUE),
-               log((1 - pi) * dgamma(x, sr$shape, sr$rate)))
+               log(1 - pi) + dgamma(x, sr$shape, sr$rate, log = TRUE))
 })
 # test_that("our dzag matches gamlss::dzaga", {
 #   # assuming they're correct
