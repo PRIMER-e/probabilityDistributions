@@ -26,7 +26,6 @@ dzitab <- function(x, mu, phi, delta, pi, log = FALSE) {
   delta <- pad_arg(delta, output_length)
   pi <- pad_arg(pi, output_length)
 
-  # TODO: run whole thing on ifelse log-scale to save precision
   if (log) {
     p_dens <- log(1 - pi) + dtab(x, mu, phi, delta, log = TRUE)
   } else {
@@ -34,11 +33,19 @@ dzitab <- function(x, mu, phi, delta, pi, log = FALSE) {
   }
 
   xltd <- x < delta
-  if (any(xltd)) {
+  # this only works for non-zero zi, otherwise log(exp(large -ve)) -> -Inf
+  if (any(xltd) & any(pi > 0)) {
     if (log) {
       p_dens[xltd] <- log(pi[xltd] / delta[xltd] + exp(p_dens[xltd]))
     } else {
       p_dens[xltd] <- pi[xltd] / delta[xltd] + p_dens[xltd]
+    }
+  }
+  if (any(x < 0 | x > 1)) {
+    if (log) {
+      p_dens[x < 0 | x > 1] <- -Inf
+    } else {
+      p_dens[x < 0 | x > 1] <- 0
     }
   }
   p_dens

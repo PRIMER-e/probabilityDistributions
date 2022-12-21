@@ -112,6 +112,7 @@ test_that("tab == zitab(p = 0)", {
   phi <- 1 - mu
   delta <- .Machine$double.eps
   expect_equal(dtab(x, mu, phi, delta), dzitab(x, mu, phi, delta, pi = 0))
+  # log inconsistencies
   expect_equal(dtab(x, mu, phi, delta, log = TRUE),
                dzitab(x, mu, phi, delta, pi = 0, log = TRUE))
 
