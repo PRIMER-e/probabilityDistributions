@@ -76,49 +76,52 @@
 </h2>
 <p>You can install the development version of probabilityDistributions from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"PRIMER-e/probabilityDistributions"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"PRIMER-e/probabilityDistributions"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>This is a basic example which shows you how to calculate a Zero-Inflated Poisson (ZIP) probability mass using both R and Stan:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://primer-e.github.io/probabilityDistributions">probabilityDistributions</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/rstan/" class="external-link">rstan</a></span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: StanHeaders</span>
-<span class="co">#&gt; Loading required package: ggplot2</span>
-<span class="co">#&gt; rstan (Version 2.21.2, GitRev: 2e1f913d3ca3)</span>
-<span class="co">#&gt; For execution on a local, multicore CPU with excess RAM we recommend calling</span>
-<span class="co">#&gt; options(mc.cores = parallel::detectCores()).</span>
-<span class="co">#&gt; To avoid recompilation of unchanged Stan programs, we recommend calling</span>
-<span class="co">#&gt; rstan_options(auto_write = TRUE)</span>
-<span class="co">#&gt; Do not specify '-march=native' in 'LOCAL_CPPFLAGS' or a Makevars file</span>
-
-<span class="va">stan_model_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"functions { "</span>, 
-                          <span class="va">zi_poisson_lpmf_stan</span><span class="op">[[</span><span class="st">"source_code"</span><span class="op">]</span><span class="op">]</span>, 
-                          <span class="st">" }"</span>,
-                          sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span>
-
-<span class="va">model_listing</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/rstan/reference/stanc.html" class="external-link">stanc</a></span><span class="op">(</span>model_code <span class="op">=</span> <span class="va">stan_model_code</span><span class="op">)</span>
-
-<span class="va">stan_function_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/rstan/reference/expose_stan_functions.html" class="external-link">expose_stan_functions</a></span><span class="op">(</span><span class="va">model_listing</span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">stan_function_names</span><span class="op">)</span>
-<span class="co">#&gt; [1] "zi_poisson_lpmf"</span>
-
-<span class="fu">zi_poisson_lpmf</span><span class="op">(</span><span class="fl">5</span>, <span class="fl">7.5</span>, <span class="fl">0.2</span><span class="op">)</span>
-<span class="co">#&gt; [1] -2.43612</span>
-
-<span class="fu"><a href="reference/dzip.html">dzip</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">7.5</span>, <span class="fl">0.2</span>, log <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; [1] -2.43612</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://primer-e.github.io/probabilityDistributions">probabilityDistributions</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/rstan/" class="external-link">rstan</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: StanHeaders</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; rstan version 2.26.13 (Stan version 2.26.1)</span></span>
+<span><span class="co">#&gt; For execution on a local, multicore CPU with excess RAM we recommend calling</span></span>
+<span><span class="co">#&gt; options(mc.cores = parallel::detectCores()).</span></span>
+<span><span class="co">#&gt; To avoid recompilation of unchanged Stan programs, we recommend calling</span></span>
+<span><span class="co">#&gt; rstan_options(auto_write = TRUE)</span></span>
+<span><span class="co">#&gt; For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,</span></span>
+<span><span class="co">#&gt; change `threads_per_chain` option:</span></span>
+<span><span class="co">#&gt; rstan_options(threads_per_chain = 1)</span></span>
+<span><span class="co">#&gt; Do not specify '-march=native' in 'LOCAL_CPPFLAGS' or a Makevars file</span></span>
+<span></span>
+<span><span class="va">stan_model_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"functions { "</span>, </span>
+<span>                          <span class="va">zi_poisson_lpmf_stan</span><span class="op">[[</span><span class="st">"source_code"</span><span class="op">]</span><span class="op">]</span>, </span>
+<span>                          <span class="st">" }"</span>,</span>
+<span>                          sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">model_listing</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/rstan/reference/stanc.html" class="external-link">stanc</a></span><span class="op">(</span>model_code <span class="op">=</span> <span class="va">stan_model_code</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">stan_function_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/rstan/reference/expose_stan_functions.html" class="external-link">expose_stan_functions</a></span><span class="op">(</span><span class="va">model_listing</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">stan_function_names</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "zi_poisson_lpmf"</span></span>
+<span></span>
+<span><span class="fu">zi_poisson_lpmf</span><span class="op">(</span><span class="fl">5</span>, <span class="fl">7.5</span>, <span class="fl">0.2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] -2.43612</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/dzip.html">dzip</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">7.5</span>, <span class="fl">0.2</span>, log <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] -2.43612</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="development">Development<a class="anchor" aria-label="anchor" href="#development"></a>
 </h2>
 <p>After making changes run the following command before committing to rebuild the package readme, which is also the home page.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">build_readme</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">build_readme</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
   </div>
@@ -174,7 +177,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

@@ -19,10 +19,22 @@
     <loc>https://primer-e.github.io/probabilityDistributions/index.html</loc>
   </url>
   <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/beta_mu_to_shape.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/check_lengths.html</loc>
+  </url>
+  <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dneg_binomial_2.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dpois.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dtab.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dzag.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dzinb_2.html</loc>
@@ -43,10 +55,19 @@
     <loc>https://primer-e.github.io/probabilityDistributions/reference/dzipll.html</loc>
   </url>
   <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/dzitab.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/gamma_mu_to_rate.html</loc>
+  </url>
+  <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/index.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/neg_binomial_2_lpmf_stan.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/pad_arg.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/poisson_lpmf_stan.html</loc>
@@ -59,6 +80,12 @@
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/qpois.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qtab.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qzag.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/qzinb_2.html</loc>
@@ -77,6 +104,9 @@
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/qzipll.html</loc>
+  </url>
+  <url>
+    <loc>https://primer-e.github.io/probabilityDistributions/reference/qzitab.html</loc>
   </url>
   <url>
     <loc>https://primer-e.github.io/probabilityDistributions/reference/zi_neg_binomial_2_lpmf_stan.html</loc>
