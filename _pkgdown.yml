@@ -48,3 +48,10 @@ reference:
     - dzinbll_2
     - qzinbll_2
     - zi_neg_binomial_log_linked_2_lpmf_stan
+  - title: "Zero-augmented Gamma"
+    desc: "Zero-augmented gamma distribution with mean-dispersion parameterisation"
+  - contents:
+    - gamma_mu_to_rate
+    - gamma_rate_to_mu
+    - dzag
+    - qzag
