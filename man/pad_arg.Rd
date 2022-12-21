@@ -14,3 +14,4 @@ pad_arg(arg, N)
 \description{
 recycle length one vectors to max output length N
 }
+\keyword{internal}

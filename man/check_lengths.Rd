@@ -12,3 +12,4 @@ check_lengths(...)
 \description{
 compare arguments lengths, probably smarter way of doing this than combn
 }
+\keyword{internal}

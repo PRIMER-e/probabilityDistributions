@@ -1,5 +1,6 @@
 #' compare arguments lengths, probably smarter way of doing this than combn
 #' @param ... objects to compare lengths of
+#' @keywords internal
 check_lengths <- function(...) {
   check_length <- function(pair) {
     a <- length(pair[[1]]); b <- length(pair[[2]])
@@ -18,6 +19,7 @@ check_lengths <- function(...) {
 #' recycle length one vectors to max output length N
 #' @param arg object to pad if necessary
 #' @param N length to pad to
+#' @keywords internal
 pad_arg <- function(arg, N) {
   if (length(arg) == 1) {
     rep_len(arg, N)
